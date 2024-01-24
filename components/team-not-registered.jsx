@@ -5,7 +5,7 @@ import { buttonVariants } from './ui/button';
 import Link from 'next/link';
 
 const TeamNotRegistered = () => {
-	const [remainingSeconds, setRemainingSeconds] = useState(5);
+	const [remainingSeconds, setRemainingSeconds] = useState(10);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -21,15 +21,27 @@ const TeamNotRegistered = () => {
 	}
 
 	return (
-		<div className="mx-auto max-w-lg space-y-6">
-			<div className="space-y-2 text-center">
-				<h1 className="text-3xl font-bold">Register Your Team</h1>
+		<div className="mx-4 my-10 md:max-w-lg md:mx-auto">
+			<div className="space-y-4 ">
+				<h1 className="text-3xl font-bold">User ID not found!</h1>
 				<p className="text-gray-500 dark:text-gray-400">
-					Your team is not registered. Kindly register your team first
-					to add members.
+					Possible Reasons for incorrect user id
 				</p>
-                <Link className={buttonVariants()} href="/team">Register your Team Now</Link>
-				<p>You will be redirected in {remainingSeconds}</p>
+
+				<ul className="list-inside list-disc text-sm text-muted-foreground">
+					<li>Your team is not registered.</li>
+					<li>
+						You might have entered incorrect teamId while
+						registering new participant.
+					</li>
+				</ul>
+				<Link
+					className={buttonVariants()}
+					href="/team"
+				>
+					Register your Team Now
+				</Link>
+				<p>You will be redirected in {remainingSeconds} seconds</p>
 			</div>
 		</div>
 	);

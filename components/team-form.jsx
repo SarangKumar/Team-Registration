@@ -17,7 +17,8 @@ import { onTeamSubmit } from '@/action';
 import { Textarea } from './ui/textarea';
 import SubmitButton from './submit-button';
 import { Label } from './ui/label';
-
+import { Button } from './ui/button';
+import Link from 'next/link';
 
 // const [state,formAction]= useFormState(createTeam, initialState);
 export const TeamForm = () => {
@@ -28,7 +29,6 @@ export const TeamForm = () => {
 	// 		description: '',
 	// 	},
 	// });
-
 
 	return (
 		<>
@@ -118,7 +118,20 @@ export const TeamForm = () => {
 						placeholder="Tell something about yourself..."
 					/>
 				</div>
-				<SubmitButton className="md:w-full">Create Team</SubmitButton>
+				<div className="space-x-2 md:space-y-2">
+					<SubmitButton className="md:w-full">
+						Create Team
+					</SubmitButton>
+					<Button
+						variant="outline"
+						asChild
+						className="md:w-full"
+					>
+						<Link href="/register">
+							Register Member to Existing Team
+						</Link>
+					</Button>
+				</div>
 			</form>
 		</>
 	);

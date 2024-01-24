@@ -28,7 +28,7 @@ const RegisterParticipants = ({ team }) => {
 					srn: formDataEntries.srn_1,
 					phone: formDataEntries.phone_1,
 					sem: +formDataEntries.sem_1,
-					github_url: formDataEntries.github_1,
+					github_url: 'www.github.com/'+formDataEntries.github_1,
 					team_id: team.id,
 				},
 			});
@@ -42,7 +42,7 @@ const RegisterParticipants = ({ team }) => {
 					srn: formDataEntries.srn_2,
 					phone: formDataEntries.phone_2,
 					sem: +formDataEntries.sem_2,
-					github_url: formDataEntries.github_2,
+					github_url: 'www.github.com/' + formDataEntries.github_2,
 					team_id: team.id,
 				},
 			});
@@ -56,7 +56,7 @@ const RegisterParticipants = ({ team }) => {
 					srn: formDataEntries.srn_3,
 					phone: formDataEntries.phone_3,
 					sem: +formDataEntries.sem_3,
-					github_url: formDataEntries.github_3,
+					github_url: 'www.github.com/' + formDataEntries.github_3,
 					team_id: team.id,
 				},
 			});
@@ -70,7 +70,7 @@ const RegisterParticipants = ({ team }) => {
 					srn: formDataEntries.srn_4,
 					phone: formDataEntries.phone_4,
 					sem: +formDataEntries.sem_4,
-					github_url: formDataEntries.github_4,
+					github_url: 'www.github.com/' + formDataEntries.github_4,
 					team_id: team.id,
 				},
 			});
@@ -217,7 +217,10 @@ const RegisterParticipant = ({ index, registeredMembersCount, members }) => {
 					/>
 				</div>
 				<div>
-					<Label htmlFor={`github${index}`}>Github Url</Label>
+					<Label htmlFor={`github${index}`}>Github Username</Label>
+					<div className='relative'>
+
+					<span className='text-sm  absolute left-3 top-2.5'>www.github.com/</span>
 					<Input
 						defaultValue={
 							index <= registeredMembersCount
@@ -225,12 +228,13 @@ const RegisterParticipant = ({ index, registeredMembersCount, members }) => {
 								: ''
 						}
 						disabled={index <= registeredMembersCount}
-						type="url"
+						className="pl-32"
 						name={`github_${index}`}
 						// readOnly={index <= registeredMembersCount}
 						id={`github${index}`}
-						placeholder="www.github.com/john_doe"
+						placeholder="john_doe"
 					/>
+					</div>
 				</div>
 			</div>
 		</div>
