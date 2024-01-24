@@ -2,7 +2,7 @@ import { AlertTriangle } from 'lucide-react';
 import { Suspense } from 'react';
 
 import RegisterParticipants from '@/components/register-user';
-import { SkeletonTeamDetails } from '@/components/skeleton-cards';
+import { SkeletonTeamContainer } from '@/components/skeleton-cards';
 import TeamNotRegistered from '@/components/team-not-registered';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
@@ -17,7 +17,7 @@ const ParticipantsPage = async ({ params }) => {
 	const teamId = params.teamId;
 	return (
 		<div className="mx-4 sm:mx-10 lg:mx-20 mt-12 mb-8">
-			<Suspense fallback={<SkeletonTeamDetails />}>
+			<Suspense fallback={<SkeletonTeamContainer />}>
 				<TeamDetails teamId={teamId} />
 			</Suspense>
 		</div>
