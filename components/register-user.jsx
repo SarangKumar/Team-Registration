@@ -9,14 +9,13 @@ import { Alert, AlertDescription, AlertTitle } from './ui/alert';
 import { CheckCircle } from 'lucide-react';
 
 const RegisterParticipants = ({ team }) => {
-	const addParticipant = async (formData, team) => {
+	// console.log(team, 'out')
+	const addParticipant = async (formData) => {
 		'use server';
-		// Assuming your FormData object is stored in a variable named formData
 		const formDataEntries = Object.fromEntries(formData.entries());
-		console.log(formDataEntries);
+		// console.log(team, 'in')
 
 		const srn_1 = formDataEntries.srn_1;
-		console.log(srn_1);
 		const srn_2 = formDataEntries.srn_2;
 		const srn_3 = formDataEntries.srn_3;
 		const srn_4 = formDataEntries.srn_4;
