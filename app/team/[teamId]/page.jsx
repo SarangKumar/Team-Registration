@@ -9,6 +9,10 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import prisma from '@/prisma/prisma';
 
+export const metadata = {
+	title: 'Participants Registration'
+}
+
 const ParticipantsPage = async ({ params }) => {
 	const teamId = params.teamId;
 	return (

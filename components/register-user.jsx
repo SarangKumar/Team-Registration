@@ -2,7 +2,7 @@ import React from 'react';
 import { Label } from './ui/label';
 import { Input } from './ui/input';
 import SubmitButton from './submit-button';
-import { transformUserData, membersPerTeam } from '@/lib/utils';
+import { membersPerTeam } from '@/lib/utils';
 import { Badge } from './ui/badge';
 import { revalidatePath } from 'next/cache';
 import { Alert, AlertDescription, AlertTitle } from './ui/alert';
@@ -89,7 +89,7 @@ const RegisterParticipants = ({ team }) => {
 			</h1>
 
 			<form
-				action={addParticipant(team)}
+				action={addParticipant}
 				className=""
 			>
 				<div className="space-y-10 my-10">
